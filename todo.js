@@ -1,26 +1,27 @@
 // It should have a place to store todos
 var todos = ["item 1", "item 2", "item 3", "item 4", "item 5"];
 
-// It should have a way to display todos
-console.log(todos);
+// display todos
+function displayTodos() {
+  return `${todos.length} Todos: ${todos}`;
+}
 
-// It should have a way to add todos
-todos.push("item 6");
-console.log(todos);
+// add todos
+function addTodos(todo) {
+  todos.push(todo);
+}
 
-// It should have a way to change a todo
-todos[0] = "first item";
-console.log(todos);
+// change a todo
+function changeTodo(index, newTodo) {
+  todos[index] = newTodo;
+}
 
-// It should have a way to delete a todo
-var removed = todos.pop();
-console.log(removed); // item 6
-console.log(todos);
+// delete a todo
+function removeTodo(index) {
+  todos.splice(index, 1);
+}
 
-var removed = todos.shift();
-console.log(removed); // first item
-console.log(todos);
-
-var removed = todos.splice(0, 2);
-console.log(removed);
-console.log(todos);
+addTodos("get shit done!");
+changeTodo(0, "first todo");
+removeTodo(3);
+console.log(displayTodos());
