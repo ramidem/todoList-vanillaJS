@@ -32,3 +32,9 @@
 - `todoList.addTodo` should add objects
 - `todoList.changeTodo` should change the `todoText` property
 - `todoList.toggleCompleted` should flip the completed property
+
+**Version 4 - Loops of Logic**
+
+- `displayTodos` should show `.todo`
+- `displayTodos` should show if `todos` is empty
+- `displayTodos` should show `.completed`
