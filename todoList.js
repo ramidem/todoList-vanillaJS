@@ -1,5 +1,5 @@
 // It should have a place to store todos
-var todoList = {
+let todoList = {
   todos: [],
 
   // display todos
@@ -7,13 +7,15 @@ var todoList = {
     // return this.todos.length + " TODOS: " + JSON.stringify(this.todos);
 
     if (this.todos.length === 0) {
-      console.log("No Todos!");
+      console.log("No todos");
+      console.log("==========");
     } else {
       for (let i = 0; i < this.todos.length; i++) {
         console.log(
           `[${this.todos[i].isCompleted ? "x" : " "}] ${this.todos[i].todo}`
         );
       }
+      console.log("==========");
     }
   },
 
@@ -23,6 +25,8 @@ var todoList = {
       todo,
       isCompleted: false
     });
+
+    console.log(`added: ${todo}`);
   },
 
   // change a todo
@@ -55,29 +59,38 @@ var todoList = {
       if (completed === allTodos) {
         // if everything is `true`, make everything `false`
         this.todos[i].isCompleted = false;
+      } else if (completed === 0) {
+        this.todos[i].isCompleted = true;
       } else {
         //  if (completed < allTodos)
         // otherwise, make everything true
         this.todos[i].isCompleted = true;
       }
     }
+
+    for (let i = 0; i < this.todos.length; i++) {
+      console.log(
+        `[${this.todos[i].isCompleted ? "x" : " "}] ${this.todos[i].todo}`
+      );
+    }
+    console.log("==========");
   }
 };
 
-todoList.addTodo("Get shit done");
-todoList.addTodo("Eat breakfast");
-todoList.addTodo("Code Code Code");
+//
+let displayTodosBtn = document.getElementById("displayTodosButton");
+let addTodoBtn = document.getElementById("addTodoButton");
+let toggleAllBtn = document.getElementById("toggleAllButton");
 
-todoList.changeTodo(0, "Getting shit done!");
+displayTodosBtn.addEventListener("click", function() {
+  todoList.displayTodos();
+});
 
-todoList.toggleCompleted(1);
-todoList.toggleCompleted(2);
+let counter = 0;
+addTodoBtn.addEventListener("click", function() {
+  todoList.addTodo(`New Todo ${counter++}`);
+});
 
-// todoList.removeTodo(2);
-console.log(todoList.displayTodos());
-
-// console.log(todoList.toggleAll());
-// console.log(todoList.displayTodos());
-
-// console.log(todoList.toggleAll());
-// console.log(todoList.displayTodos());
+toggleAllBtn.addEventListener("click", function() {
+  todoList.toggleAll();
+});

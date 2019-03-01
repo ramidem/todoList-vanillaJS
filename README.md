@@ -43,3 +43,9 @@
 
 - `.toggleAll`: if everything is `true`, make everything `false`
 - `.toggleAll`: otherwise, make everything `true`
+
+**Version 7 - HTML and the DOM**
+
+- There should be a "Display Todos" button and a "Toggle All" button in the app
+- Clicking "Display Todos" should run `todoList.displayTodos`
+- Clicking "Toggle All" should run `todoList.toggleAll`
