@@ -41,6 +41,26 @@ var todoList = {
 
     // set to false if it is true and vice-versa
     todo.isCompleted = !todo.isCompleted;
+  },
+
+  toggleAll: function() {
+    let completed = 0;
+    let allTodos = this.todos.length;
+
+    for (let i = 0; i < allTodos; i++) {
+      this.todos[i].isCompleted ? completed++ : false;
+    }
+
+    for (let i = 0; i < allTodos; i++) {
+      if (completed === allTodos) {
+        // if everything is `true`, make everything `false`
+        this.todos[i].isCompleted = false;
+      } else {
+        //  if (completed < allTodos)
+        // otherwise, make everything true
+        this.todos[i].isCompleted = true;
+      }
+    }
   }
 };
 
@@ -55,3 +75,9 @@ todoList.toggleCompleted(2);
 
 // todoList.removeTodo(2);
 console.log(todoList.displayTodos());
+
+// console.log(todoList.toggleAll());
+// console.log(todoList.displayTodos());
+
+// console.log(todoList.toggleAll());
+// console.log(todoList.displayTodos());

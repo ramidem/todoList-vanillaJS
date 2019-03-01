@@ -33,8 +33,13 @@
 - `todoList.changeTodo` should change the `todoText` property
 - `todoList.toggleCompleted` should flip the completed property
 
-**Version 4 - Loops of Logic**
+**Version 5 - Loops of Logic**
 
 - `displayTodos` should show `.todo`
 - `displayTodos` should show if `todos` is empty
 - `displayTodos` should show `.completed`
+
+**Version 6 - Thinking in Code**
+
+- `.toggleAll`: if everything is `true`, make everything `false`
+- `.toggleAll`: otherwise, make everything `true`
