@@ -9,10 +9,39 @@
   <body>
     <h1>todos</h1>
 
-    <button id="displayTodosButton">Display Todos</button>
-    <button id="addTodoButton">Add Todo</button>
-    <button id="toggleAllButton">Toggle All</button>
+    <div>
+      <button onclick="handlers.displayTodos()">Display Todos</button>
+    </div>
 
+    <div>
+      <button onclick="handlers.addTodo()">+</button>
+      <input type="text" id="todoInput" placeholder="Add a todo" />
+    </div>
+
+    <div>
+      <button onclick="handlers.updateTodo()" id="updateTodoBtn">
+        Change todo
+      </button>
+      <input type="number" id="updateTodoPositionInput" value="0" />
+      <input type="text" id="updateTodoTextInput" />
+    </div>
+
+    <div>
+      <button onclick="handlers.toggleCompleted()" id="toggleTodoBtn">
+        ✔️
+      </button>
+      <input type="number" id="toggleTodoPositionInput" value="0" />
+    </div>
+
+    <div>
+      <button onclick="handlers.deleteTodo()" id="deleteTodoBtn">
+        Delete todo
+      </button>
+      <input type="number" id="deleteTodoPositionInput" value="0" />
+    </div>
+
+    <div><button onclick="handlers.toggleAll()">Toggle All</button></div>
+    <!--
     <section class="todoapp">
       <header class="header">
         <h1>todos</h1>
@@ -42,7 +71,7 @@
         </ul>
         <button class="clear-completed">Clear completed</button>
       </footer>
-    </section>
+    </section> -->
 
     <script src="./todoList.js"></script>
   </body>

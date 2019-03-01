@@ -49,3 +49,10 @@
 - There should be a "Display Todos" button and a "Toggle All" button in the app
 - Clicking "Display Todos" should run `todoList.displayTodos`
 - Clicking "Toggle All" should run `todoList.toggleAll`
+
+**Version 8 - Getting Data from Inputs**
+
+- There should be a button for adding todos
+- There should be a button for changing todos
+- There should be a button for deleting todos
+- There should be a button for toggling todos
