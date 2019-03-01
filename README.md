@@ -19,10 +19,16 @@
 - It should have a `function` to change a todo
 - It should have a `function` to delete a todo
 
-**Version 2 - Objects**
+**Version 3 - Objects**
 
 - It should store the todos array on an `object`
 - It should have a `displayTodos` method
 - It should have a `addTodo` method
 - It should have a `changeTodo` method
 - It should have a `deleteTodo` method
+
+**Version 4 - Booleans**
+
+- `todoList.addTodo` should add objects
+- `todoList.changeTodo` should change the `todoText` property
+- `todoList.toggleCompleted` should flip the completed property
