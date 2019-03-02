@@ -10,10 +10,6 @@
     <h1>todos</h1>
 
     <div>
-      <button onclick="handlers.displayTodos()">Display Todos</button>
-    </div>
-
-    <div>
       <button onclick="handlers.addTodo()">+</button>
       <input type="text" id="todoInput" placeholder="Add a todo" />
     </div>
@@ -41,6 +37,10 @@
     </div>
 
     <div><button onclick="handlers.toggleAll()">Toggle All</button></div>
+
+    <div>
+      <ul id="todo-app"></ul>
+    </div>
     <!--
     <section class="todoapp">
       <header class="header">

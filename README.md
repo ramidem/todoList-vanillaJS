@@ -56,3 +56,9 @@
 - There should be a button for changing todos
 - There should be a button for deleting todos
 - There should be a button for toggling todos
+
+**Version 9 - Escape from the Console**
+
+- There should be an `li` element for every todo
+- Each `li` element should contain todo text
+- Each `li` element should show completed
