@@ -30,24 +30,24 @@ let todoList = {
 
   toggleAll: function() {
     let completed = 0;
-    let allTodos = this.todos.length;
+    let todos = this.todos;
 
-    for (let i = 0; i < allTodos; i++) {
-      this.todos[i].isCompleted ? completed++ : false;
-    }
+    todos.forEach(function(todo) {
+      todo.isCompleted ? completed++ : false;
+    });
 
-    for (let i = 0; i < allTodos; i++) {
-      if (completed === allTodos) {
+    todos.forEach(function(todo) {
+      if (completed === todos.length) {
         // if everything is `true`, make everything `false`
-        this.todos[i].isCompleted = false;
+        todo.isCompleted = false;
       } else if (completed === 0) {
-        this.todos[i].isCompleted = true;
+        todo.isCompleted = true;
       } else {
         //  if (completed < allTodos)
         // otherwise, make everything true
-        this.todos[i].isCompleted = true;
+        todo.isCompleted = true;
       }
-    }
+    });
   }
 };
 
@@ -105,26 +105,17 @@ let view = {
     var todosUl = document.getElementById("todo-app");
     todosUl.innerHTML = "";
 
-    for (let i = 0; i < todoList.todos.length; i++) {
+    todoList.todos.forEach(function(todo, index) {
       var todoLi = document.createElement("li");
-      var todo = todoList.todos[i];
 
-      var todoWithCompletion = "";
-
-      console.log(todo.todo);
-
-      if (todo.isCompleted === true) {
-        todoWithCompletion = "[x] " + todo.todo;
-      } else {
-        todoWithCompletion = "[ ] " + todo.todo;
-      }
-
-      todoLi.id = i;
-      todoLi.textContent = todoWithCompletion;
+      todoLi.id = index;
+      todoLi.textContent = todo.isCompleted
+        ? `[x] ${todo.todo}`
+        : `[ ] ${todo.todo}`;
       todoLi.appendChild(this.createDeleteButton());
 
       todosUl.appendChild(todoLi);
-    }
+    }, this); // createDeleteButton()
   },
 
   createDeleteButton: function() {
